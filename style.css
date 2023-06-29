@@ -27,13 +27,14 @@ header, main, section, article {
 }
 
 header > h1 {
-    color: rgb(255, 255, 255);
-    text-shadow: 3px 3px 0px black;
+    color: white;
+    text-shadow: 3px 3px 1px black;
 }
 
 header > p {
-    color: rgb(255, 255, 255);
-    text-shadow: 3px 3px px black;
+    color: white;
+    text-shadow: 3px 3px 0px black;
+    text-align: center;
 }
 
 main, section, article {
