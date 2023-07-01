@@ -22,9 +22,9 @@
         <!--Para ser recursivo, não deve indicar somente o nome do arquivo, mas sim um código php que retorna o nome do arquivo-->
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
             <label for="valor">Qual valor você deseja sacar? (R$)</label>
-            <input type="number" name="valor" id="idValor" Value="<?="$valor" ?>">
+            <input type="number" name="valor" id="idValor" Value="<?="$valor" ?>" step="5">
 
-            <p>*Notas disponíveis: R$100, R$50, R$10 e R$5</p>
+            <p style="font-size: 0.7em;"><sup>*</sup>Notas disponíveis: R$100, R$50, R$10 e R$5</p>
 
             <input type="submit" value="Sacar">
         </form>
@@ -46,7 +46,7 @@
             $cinco = (($dez - $dez_int) * 10)/5;
             $cinco_int = (int) $cinco;
                 
-            echo "<h3>Saque de R$$valor realizado</h3>";
+            echo "<h3>Saque de R$".number_format($valor, 2, ",", ".")." realizado</h3>";
 
             echo "<ul><li>100 x$cem_int</li>";
             echo "<li>50 x$cincoenta_int</li>";

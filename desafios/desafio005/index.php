@@ -39,17 +39,20 @@
             } else {
                 $resultado_int = (int) ($dividendo/$divisor);
                 $resto = $dividendo % $divisor;
-    
-                echo "<p>Dividendo: <strong>$dividendo</strong></p>";
-
-                echo "<br><p>Divisor: <strong>$divisor</strong></p>";
-
-                echo "<br><p>Quociente: <strong>$resultado_int</strong></p>";
-
-                echo "<br><p>Resto: <strong>$resto</strong></p>";
-            }
-            
+            }    
         ?>
+
+        <table class="divisao">
+            <tr>
+                <td><?="$dividendo"?></td>
+                <td><?="$divisor"?></td>
+            </tr>
+            <tr>
+                <td><?="$resultado_int"?></td>
+                <td><?="$resto"?></td>
+            </tr>
+
+        </table>
     </section>
 </body>
 </html>

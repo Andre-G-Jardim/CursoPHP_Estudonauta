@@ -8,8 +8,9 @@
 </head>
 <body>
     <?php 
-        $nascimento = $_GET["nascimento"] ?? (int) date('Y');
+        $nascimento = $_GET["nascimento"];
         $ano = $_GET["ano"] ?? (int) date('Y');
+        $anoAtual = (int) date('Y');
     ?>
 
     <header>
@@ -24,9 +25,9 @@
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
             
             <label for="nascimento">Em que ano você nasceu? </label>
-            <input type="number" name="nascimento" id="idNascimento" Value="<?php echo"$nascimento" ?>">
+            <input type="number" name="nascimento" id="idNascimento" max="2023" required Value="<?php echo"$nascimento" ?>">
 
-            <label for="ano">Quer saber sua idade em que ano? (estamos em <?php echo "<strong>$ano</strong>"?>): </label>
+            <label for="ano">Quer saber sua idade em que ano? (estamos em <?php echo "<strong>$anoAtual</strong>"?>): </label>
             <input type="number" name="ano" id="idAno" Value="<?php echo"$ano" ?>">
 
             <input type="submit" value="Calcular Idade">

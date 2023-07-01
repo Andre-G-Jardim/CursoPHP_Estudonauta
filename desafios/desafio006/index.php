@@ -9,7 +9,7 @@
 <body>
     <?php 
         $salario = $_GET["salario"] ?? 0;
-        $salarioMinimo = 1320.00
+        $salarioMinimo = 1_320.00;
     ?>
     <header>
         <h1>
@@ -22,7 +22,7 @@
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
             <label for="">Seu salário (R$): </label>
             <input type="number" name="salario" id="idSalario" Value="<?php echo"$salario" ?>">
-
+            <p>Considerando o salário mínimo de R$<?=number_format($salarioMinimo, 2, ",", ".")?></p>
             <input type="submit" value="Calcular">
         </form>
     </main>
@@ -34,7 +34,7 @@
             $NumSalarioMinimo = (int) ($salario/$salarioMinimo);
             $resto = $salario % $salarioMinimo;
                 
-            echo "<p> Quem recebe um salário de R$$salario ganha <strong>$NumSalarioMinimo salário mínimo + R$$resto</strong></p>";                
+            echo "<p> Quem recebe um salário de R$" . number_format($salario, 2, ",", ".") ." ganha <strong>$NumSalarioMinimo salário mínimo + R$" . number_format($resto, 2, ",", ".") . "</strong></p>";                
             
         ?>
     </section>

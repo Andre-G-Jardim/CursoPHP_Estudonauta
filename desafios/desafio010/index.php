@@ -24,10 +24,11 @@
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
             
             <label for="preco">Preço do produto (R$): </label>
-            <input type="number" name="preco" id="idPreco" Value="<?php echo"$preco" ?>">
+            <input type="number" name="preco" id="idPreco" Value="<?php echo"$preco" ?>" step="0.01">
 
-            <label for="reajuste">Qual será o percentual de reajuste (<?="$reajuste"?>%):</label>
-            <input type="range" min="-100" max="100" name="reajuste" id="idReajuste" step="0.1" Value="<?="$reajuste" ?>">
+            <label for="reajuste">Qual será o percentual de reajuste? (<strong><span id="p">?</span>%</strong>)</label>
+            
+            <input type="range" min="-100" max="100" name="reajuste" id="idReajuste" step="0.1" Value="<?="$reajuste" ?>" oninput="mudaValor()">
 
             <input type="submit" value="Calcular Reajuste">
         </form>
@@ -40,9 +41,16 @@
 
             $precoFinal = $preco * (1 + ($reajuste/100));
                 
-            echo "<p>O produto que custava $preco, com $reajuste% de aumento, vai passar a custar $precoFinal a partir de agora.</p>";
+            echo "<p>O produto que custava R$" . number_format($preco, 2, ",", ".") .", com $reajuste% de aumento, vai passar a custar <strong>R$" . number_format($precoFinal, 2, ",", ".") ."</strong> a partir de agora.</p>";
             
         ?>
     </section>
+    <script>
+        mudaValor()
+
+        function mudaValor(){
+            p.innerText = idReajuste.value;
+        }
+    </script>
 </body>
 </html>
