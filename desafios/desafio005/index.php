@@ -48,8 +48,8 @@
                 <td><?="$divisor"?></td>
             </tr>
             <tr>
-                <td><?="$resultado_int"?></td>
                 <td><?="$resto"?></td>
+                <td><?="$resultado_int"?></td>
             </tr>
 
         </table>
