@@ -13,8 +13,8 @@
         // $num = 0x1A; //16^0 x A(10) + 16^1 x 1(1)
         // echo "O valor da variavel sum é: $num";
 
-        // $variavel = 300.5;
-        // var_dump($variavel)
+        $variavel = 300.5;
+        var_dump($variavel)
 
         // $num = 3e2; // 3 x 10^2
         // echo "O valor da variavel sum é: $num";
